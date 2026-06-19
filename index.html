@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vocabulary MCQ Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero top-dashboard">
+      <aside class="score-card stat-card stat-left" aria-live="polite">
+        <div class="score-row"><span>Answer:</span><strong id="answerText">0</strong></div>
+        <div class="score-row"><span>Correct:</span><strong id="correctText">0</strong></div>
+        <div class="score-row"><span>Mistake:</span><strong id="mistakeText">0</strong></div>
+      </aside>
+
+      <div class="title-block">
+        <p class="eyebrow">N5 Lessons 1-25 • N4 Lessons 26-50 • N3 Sou Matome</p>
+        <h1>Vocabulary MCQ Quiz</h1>
+      </div>
+
+      <aside class="score-card stat-card stat-right" aria-live="polite">
+        <div class="score-row"><span>Score</span><strong id="scoreText">0/0</strong></div>
+        <div class="score-row"><span>Timer:</span><strong id="timerText">00:00</strong></div>
+        <div class="score-row"><span>Avg Answer:</span><strong id="avgTimeText">0.0s</strong></div>
+      </aside>
+    </header>
+
+    <section class="toolbar" aria-label="Quiz controls">
+      <label class="field">
+        <span>Lesson</span>
+        <select id="lessonSelect"></select>
+      </label>
+      <label class="field">
+        <span>Mode</span>
+        <select id="modeSelect">
+          <option value="jp-bn">Hiragana → Bangla</option>
+          <option value="audio-bn">Audio only → Bangla</option>
+          <option value="bn-jp">Bangla → Hiragana</option>
+        </select>
+      </label>
+      <label class="switch">
+        <input id="autoAudio" type="checkbox" checked />
+        <span>Auto audio</span>
+      </label>
+      <button id="restartBtn" class="secondary">Restart</button>
+    </section>
+
+    <section class="quiz-card" aria-live="polite">
+      <div class="progress-wrap">
+        <div class="progress-info">
+          <span id="lessonTitle">Lesson</span>
+          <span id="questionCount">Question 1</span>
+        </div>
+        <div class="progress-bar" aria-hidden="true"><div id="progressFill"></div></div>
+      </div>
+
+      <div class="question-area">
+        <p class="prompt" id="promptText">Choose the Bangla meaning</p>
+        <div class="word-row">
+          <div id="questionWord" class="question-word">
+            <span id="questionWordText">---</span>
+            <button id="audioBtn" class="audio-btn in-word" title="Play audio" aria-label="Play Japanese audio">🔊</button>
+          </div>
+        </div>
+        <p id="hintText" class="hint hidden"></p>
+      </div>
+
+      <form id="optionsForm" class="options-grid"></form>
+
+      <div id="feedback" class="feedback hidden"></div>
+
+      <div class="actions">
+        <button id="nextBtn" class="secondary hidden">Next</button>
+      </div>
+    </section>
+
+    <section class="study-card">
+      <div class="study-header">
+        <h2>Study list</h2>
+        <button id="toggleStudy" class="link-btn">Show / Hide</button>
+      </div>
+      <div id="studyList" class="study-list hidden"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Tip: For best audio, open in Chrome/Edge and allow browser speech. No internet needed.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
